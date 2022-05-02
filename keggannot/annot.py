@@ -391,7 +391,7 @@ class KEGGAnnotator(object):
             for p in pathways:
                 if p not in pathways.keys():
                     logging.info('Could not resolve pathway "%s"' % p)
-                    f.write
+                    f.write('Could not resolve pathway "%s"\n' % p)
                     continue
                 out["pathway_names"] = self.pathways[p]["name"]
                 out["pathway_classes"] = self.pathways[p]["class"]
