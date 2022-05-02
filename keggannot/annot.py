@@ -387,7 +387,7 @@ class KEGGAnnotator(object):
         pathways = self.get_hit_pathway_list(kos)
         if pathways:
             out["pathways"] = pathways
-            f = open("/pine/scr/l/i/lilalbar/p.lunula_fastq/github/trinity_assembly/keggannotpathway_output.info", 'w')
+            f = open("/pine/scr/l/i/lilalbar/p.lunula_fastq/github/trinity_assembly/annotation/keggannot/pathway_output.info", 'w')
             for p in pathways:
                 if p not in pathways.keys():
                     logging.info('Could not resolve pathway "%s"' % p)
