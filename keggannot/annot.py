@@ -387,8 +387,15 @@ class KEGGAnnotator(object):
         pathways = self.get_hit_pathway_list(kos)
         if pathways:
             out["pathways"] = pathways
-            out["pathway_names"] = [self.pathways[p]["name"] for p in pathways]
-            out["pathway_classes"] = [self.pathways[p]["class"] for p in pathways]
+            f = open("/pine/scr/l/i/lilalbar/p.lunula_fastq/github/trinity_assembly/keggannotpathway_output.info", 'w')
+            for p in pathways:
+                if p not in pathways.keys():
+                    logging.info('Could not resolve pathway "%s"' % p)
+                    f.write
+                    continue
+                out["pathway_names"] = self.pathways[p]["name"]
+                out["pathway_classes"] = self.pathways[p]["class"]
+            f.close()
         
         # Build enzyme list
         enzymes = self.get_hit_enzyme_list(kos)
